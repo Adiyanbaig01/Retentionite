@@ -1,0 +1,153 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* ── Space Explorer Global Styles ── */
+
+:root {
+  --space-bg: #05071A;
+  --space-card: rgba(255,255,255,0.04);
+  --space-card-hover: rgba(255,255,255,0.07);
+  --space-border: rgba(255,255,255,0.08);
+  --space-border-hover: rgba(255,255,255,0.18);
+  --violet-glow: rgba(139,92,246,0.4);
+  --blue-glow: rgba(59,130,246,0.4);
+  --pink-glow: rgba(236,72,153,0.4);
+  --cyan-glow: rgba(6,182,212,0.4);
+}
+
+html, body {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: var(--space-bg);
+}
+
+/* Twinkling stars */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(0.6); }
+}
+
+@keyframes twinkle-slow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.1; }
+}
+
+@keyframes float-planet {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(3deg); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
+@keyframes orbit-reverse {
+  0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  100% { transform: rotate(-360deg) translateX(80px) rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--violet-glow); }
+  50% { box-shadow: 0 0 40px var(--violet-glow), 0 0 80px var(--violet-glow); }
+}
+
+@keyframes nebula-drift {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+  50% { transform: scale(1.1) rotate(5deg); opacity: 0.7; }
+}
+
+@keyframes shooting-star {
+  0% { transform: translateX(-100px) translateY(-100px); opacity: 0; }
+  5% { opacity: 1; }
+  80% { opacity: 0.5; }
+  100% { transform: translateX(1400px) translateY(800px); opacity: 0; }
+}
+
+.star-twinkle { animation: twinkle var(--duration, 2s) ease-in-out infinite; animation-delay: var(--delay, 0s); }
+.planet-float { animation: float-planet 4s ease-in-out infinite; }
+.planet-float-slow { animation: float-slow 6s ease-in-out infinite; }
+
+/* Chrome-style tab scrollbar */
+.tabs-scroll::-webkit-scrollbar { height: 0; }
+
+/* Note editor */
+.note-editor {
+  outline: none;
+  min-height: 100%;
+  caret-color: #8B5CF6;
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: var(--space-card);
+  border: 1px solid var(--space-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-card:hover {
+  background: var(--space-card-hover);
+  border-color: var(--space-border-hover);
+}
+
+/* Glow button */
+.glow-violet {
+  box-shadow: 0 0 20px rgba(139,92,246,0.4), 0 4px 12px rgba(0,0,0,0.3);
+}
+.glow-violet:hover {
+  box-shadow: 0 0 30px rgba(139,92,246,0.6), 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* Scrollbar space style */
+.space-scroll::-webkit-scrollbar { width: 5px; }
+.space-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+.space-scroll::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.4); border-radius: 999px; }
+
+/* Profile grid hover */
+.subject-post:hover .subject-overlay { opacity: 1; }
+.subject-overlay { opacity: 0; transition: opacity 0.2s ease; }
+
+/* Retention curve gradient */
+.retention-gradient {
+  background: linear-gradient(135deg, #7C3AED 0%, #2563EB 50%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Dynamic Theme Animations ── */
+
+/* Rose Theme: Drifting Petals */
+@keyframes petal-drift {
+  0% { transform: translateY(-10vh) translateX(0vw) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(110vh) translateX(20vw) rotate(360deg); opacity: 0; }
+}
+
+/* Stranger Things Theme: Floating Spores */
+@keyframes spore-float {
+  0% { transform: translateY(0vh) translateX(0vw) scale(1); opacity: 0.2; }
+  33% { transform: translateY(-15vh) translateX(10vw) scale(1.2); opacity: 0.8; }
+  66% { transform: translateY(-5vh) translateX(-5vw) scale(0.8); opacity: 0.5; }
+  100% { transform: translateY(-30vh) translateX(5vw) scale(1.1); opacity: 0; }
+}
+
+/* Marvel Theme: Sweeping Speed Lines / Halftone Shift */
+@keyframes marvel-sweep {
+  0% { transform: translateX(-100vw) skewX(-45deg); opacity: 0; }
+  10% { opacity: 0.5; }
+  50% { opacity: 0.1; }
+  90% { opacity: 0.5; }
+  100% { transform: translateX(200vw) skewX(-45deg); opacity: 0; }
+}
+
+@keyframes marvel-pulse {
+  0%, 100% { opacity: 0.05; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.05); }
+}
