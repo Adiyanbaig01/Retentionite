@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom-dom";
+import { Link } from "react-router-dom";
 import {
   Sparkles, ArrowRight, Brain, Target, BarChart3, Zap, Star, Users,
   BookOpen, Play, ChevronRight, Rocket, Shield, Globe,
@@ -99,9 +99,9 @@ export function LandingPage() {
       {/* Nav */}
       <nav className="relative z-20 flex items-center justify-between px-8 py-5 max-w-[1400px] mx-auto">
         <div className="flex items-center gap-2.5">
-          <img 
-            src={logo} 
-            alt="Retentionite" 
+          <img
+            src={logo}
+            alt="Retentionite"
             className="w-9 h-9"
             style={{ objectFit: "contain" }}
           />
@@ -553,9 +553,9 @@ export function LandingPage() {
       <footer className="relative z-10 px-8 py-8 max-w-[1400px] mx-auto" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img 
-              src={logo} 
-              alt="Retentionite" 
+            <img
+              src={logo}
+              alt="Retentionite"
               className="w-7 h-7"
               style={{ objectFit: "contain" }}
             />

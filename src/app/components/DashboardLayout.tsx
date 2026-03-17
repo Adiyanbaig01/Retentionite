@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import profilePhoto from "../../assets/adiyan_profile.png";
 import logo from "../../assets/app_logo.png";
 import {
